@@ -30,3 +30,10 @@ class EntitySerializer(serializers.ModelSerializer):
         model = Entity
         fields = ['name', 'description', 'comments', 'score_list', 'id']
 
+
+class EntityUpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Entity
+        fields = ['name', 'description']
