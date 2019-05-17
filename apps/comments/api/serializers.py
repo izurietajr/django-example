@@ -3,13 +3,6 @@ from rest_framework import serializers
 from apps.comments.models import Entity, Comment, Score
 
 
-class EntitySerializer(serializers.ModelSerializer):
-
-    class Meta:
-
-        model = Entity
-        fields = '__all__'
-
 
 class CommentSerializer(serializers.ModelSerializer):
 
@@ -18,9 +11,22 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = '__all__'
 
- class ScoreSerializer(serializers.ModelSerializer):
+
+class ScoreSerializer(serializers.ModelSerializer):
 
     class Meta:
 
         model = Score
         fields = '__all__'
+
+
+class EntitySerializer(serializers.ModelSerializer):
+
+    comments = CommentSerializer(many=True)
+    score_list = ScoreSerializer(many=True)
+
+    class Meta:
+
+        model = Entity
+        fields = ['name', 'description', 'comments', 'score_list', 'id']
+
