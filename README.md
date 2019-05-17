@@ -13,7 +13,11 @@ start a virtual environment
 
 `django-admin startproject <name>`
 
-`django-admin startapp <name>`
+`django-admin startapp <name>` 
+
+o
+
+`python manage.py startapp <name>`
 
 `python manage.py makemigrations`
 
@@ -28,3 +32,21 @@ INSTALLED_APPS = [
     'apps.comments'
 ]
 ```
+
+modelos
+
+migraciones
+
+admin
+
+serializers
+
+vistas
+
+`generics.ListCreateAPIView`
+
+`generics.RetrieveUpdateDestroyAPIView`
+
+urls
+
+
